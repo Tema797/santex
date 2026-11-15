@@ -1,0 +1,82 @@
+.fab {
+  display: none;
+}
+
+/* Показуємо лише на мобільному/планшеті */
+@media (max-width: 900px) {
+  .fab {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .fab__btn {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.15s ease;
+  }
+
+  .fab__btn:active {
+    transform: scale(0.92);
+  }
+
+  .fab__btn--call {
+    width: 60px;
+    height: 60px;
+    background: var(--blue-grad);
+  }
+
+  .fab__btn--viber {
+    background: #7360f2;
+  }
+
+  .fab__btn--tg {
+    background: #2c7a93;
+  }
+
+  .fab__btn svg {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Пульсація навколо кнопки дзвінка */
+  .fab__pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--blue-500);
+    opacity: 0.55;
+    animation: fabPulse 1.8s ease-out infinite;
+  }
+
+  @keyframes fabPulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fab__pulse {
+      animation: none;
+      display: none;
+    }
+  }
+}

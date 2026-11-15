@@ -1,0 +1,284 @@
+:root {
+  /* ---- Colors ---- */
+  --blue-500: #34a7e5;
+  --blue-600: #1f8fd6;
+  --blue-700: #1b6fb8;
+  --blue-grad: linear-gradient(135deg, #34a7e5 0%, #1b6fb8 100%);
+
+  --teal-700: #1e5f7a;
+  --teal-800: #2a4d5e;
+  --teal-grad: linear-gradient(135deg, #2c7a93 0%, #1e4d5e 100%);
+
+  --ink: #1a1a2e;
+  --ink-soft: #3a3a4a;
+  --muted: #7a7f8a;
+
+  --bg: #ffffff;
+  --bg-soft: #f5f6f8;
+  --bg-card: #ffffff;
+  --line: #e6e8ec;
+
+  --white: #ffffff;
+
+  /* ---- Shape ---- */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 4px 16px rgba(26, 26, 46, 0.06);
+  --shadow-md: 0 12px 32px rgba(26, 26, 46, 0.10);
+  --shadow-lg: 0 24px 60px rgba(26, 26, 46, 0.18);
+
+  /* ---- Layout ---- */
+  --container: 1200px;
+  --gutter: 24px;
+  --header-h: 84px;
+
+  --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* <picture> — лише обгортка для WebP-fallback, не впливає на лейаут */
+picture {
+  display: contents;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---- Layout helpers ---- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: 80px;
+}
+
+.section--soft {
+  background: var(--bg-soft);
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--blue-700);
+  font-weight: 500;
+  margin-top: 12px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--white);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background: var(--blue-grad);
+}
+
+.btn--teal {
+  background: var(--teal-grad);
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ---- Forms ---- */
+.field {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: var(--r-pill);
+  background: var(--bg-soft);
+  border: 1.5px solid transparent;
+  font-size: 15px;
+  color: var(--ink);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.field::placeholder {
+  color: var(--muted);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  background: var(--white);
+}
+
+.field--error {
+  border-color: #e0556b;
+}
+
+.field-error {
+  color: #e0556b;
+  font-size: 12.5px;
+  padding-left: 20px;
+  margin-top: -6px;
+}
+
+.form-success {
+  text-align: center;
+  padding: 8px 0;
+  color: var(--blue-700);
+  font-weight: 600;
+}
+
+/* ---- Utilities ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 56px;
+  }
+  .section-title {
+    font-size: 27px;
+  }
+  :root {
+    --header-h: 70px;
+  }
+}
+
+/* ---- Підказка (toast): «номер скопійовано» тощо ---- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 16px);
+  max-width: calc(100vw - 32px);
+  padding: 14px 20px;
+  border-radius: var(--r-md);
+  background: var(--ink);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- Помилка відправки форми ---- */
+.form-error {
+  color: #d64545;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---- Логотип: слово поруч зі знаком ---- */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.brand-name {
+  font-weight: 800;
+  font-size: 20px;
+}
+.brand-sub {
+  font-weight: 500;
+  font-size: 20px;
+  color: #5bbcf0;
+}
+.header--scrolled .brand-sub {
+  color: var(--blue-700);
+}

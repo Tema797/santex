@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сантех Майстер — професійні сантехнічні послуги: прочищення труб, монтаж радіаторів, встановлення фільтрів та пральних машин. Виклик майстра від діагностики до монтажу." />
+    <meta name="theme-color" content="#1B6FB8" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Сантех Майстер — професійні сантехнічні послуги" />
+    <meta property="og:description" content="Рішення будь-яких сантехнічних проблем від діагностики до монтажу. Замовляйте майстра зараз!" />
+    <meta property="og:image" content="/images/hero-master.jpg" />
+    <meta property="og:locale" content="uk_UA" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>Сантех Майстер — професійні сантехнічні послуги</title>
+
+    <!--
+      Structured data (schema.org) для Google.
+      TODO власнику: замініть домен (https://santeh-maister.example) на реальний
+      та додайте блок "address" (вулиця, місто, індекс) і "geo" для повних rich-результатів.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Plumber",
+      "@id": "https://santeh-maister.example/#business",
+      "name": "Сантех Майстер",
+      "description": "Професійні сантехнічні послуги: прочищення труб каналізації, ремонт сололіфтів, перенесення радіаторів, промивання теплообмінників, встановлення фільтрів та пральних машин.",
+      "url": "https://santeh-maister.example/",
+      "image": "https://santeh-maister.example/images/hero-master.jpg",
+      "telephone": "+380638680505",
+      "email": "santexmayster@gmail.com",
+      "priceRange": "₴₴",
+      "currenciesAccepted": "UAH",
+      "areaServed": "Україна",
+      "sameAs": [
+        "https://t.me/+380638680505"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Сантехнічні послуги",
+        "itemListElement": [
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Прочищення труб каналізації" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Ремонт та чистка сололіфтів" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Перенесення радіаторів, батарей опалення, стояків" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Промивання теплообмінників" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Встановлення фільтрів для очищення води" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Заміна сифона під ванною або умивальником" } },
+          { "@type": "Offer", "priceCurrency": "UAH", "price": "2000", "itemOffered": { "@type": "Service", "name": "Встановлення, підключення пральної або посудомийної машини" } }
+        ]
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

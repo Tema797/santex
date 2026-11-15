@@ -1,0 +1,31 @@
+.consult-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.consult-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.consult-form__context {
+  font-size: 13.5px;
+  color: var(--blue-700);
+  background: rgba(52, 167, 229, 0.1);
+  border: 1px solid rgba(52, 167, 229, 0.25);
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+}
+
+.consult-form__context strong {
+  font-weight: 600;
+}
+
+.consult-form__textarea {
+  border-radius: var(--r-md);
+  resize: vertical;
+  min-height: 84px;
+  line-height: 1.45;
+}

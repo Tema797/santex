@@ -1,0 +1,96 @@
+.footer {
+  background: #1c1f26;
+  color: #fff;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-block: 32px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.05;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 26px;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.78);
+  transition: color 0.15s ease;
+}
+
+.footer__link:hover {
+  color: #fff;
+}
+
+.footer__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__phone-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.footer__phone span small {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__phone > span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .footer__nav {
+    margin-inline: 0;
+  }
+  .footer__right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
